@@ -1,0 +1,14 @@
+/* App.css */
+
+/* You can also include the Google Fonts link directly in your CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300&display=swap');
+
+.App {
+  text-align: center;
+}
+
+/* Additional styles using the Google Font */
+h1,
+p {
+  font-family: 'Readex Pro', sans-serif;
+}

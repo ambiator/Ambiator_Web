@@ -1,0 +1,23 @@
+.mainCard {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    /* background: linear-gradient(135deg, #f0f0f0, #e0e0e0); */
+    transition: transform 0.2s;
+}
+
+.userTitle {
+    display: flex;
+    font-size: 35px;
+    font-weight: bolder;
+    color: rgb(70, 65, 65);
+    
+}
+
+.userAddButton {
+    display: flex;
+    font-weight: bolder;
+    width: 100%;
+    border-radius: 15px;
+    color: rgb(57, 55, 55);
+    background-color: rgb(211, 211, 211);
+}

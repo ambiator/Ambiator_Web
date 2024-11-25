@@ -1,0 +1,48 @@
+/* Define the default styles for large screens */
+.home-page-container {
+    display: flex;
+    background-color: #ffffff;
+    height: 100vh;
+    width: 50vw;
+}
+@media screen and (max-width: 768px) {
+    .home-page-container {
+        background-color: #ffffff;
+    }
+}
+.sidebar-container {
+    width: 4vw;
+     /* Adjust the width as needed */
+}
+
+.content-container {
+    flex: 1;
+}
+
+.content {
+    /* Your content styles */
+}
+
+/* Media query for smaller screens (adjust the max-width as needed) */
+@media (max-width: 1000px) {
+    .home-page-container {
+        flex-direction: column;
+    }
+
+    .sidebar-container {
+        width: 100%; /* Take up the full width of the screen */
+    }
+}
+
+/* Media query for smaller screens (adjust the max-width as needed) */
+@media (max-width: 1000px) {
+    .sidebar-container {
+        display: none; /* Hide the sidebar by default */
+    }
+
+    .home-page-container.sidebar-open .sidebar-container {
+        display: block; /* Show the sidebar when it's open */
+        width: 100%;
+    }
+}
+

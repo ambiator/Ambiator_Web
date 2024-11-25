@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #ffffff;
+  color: #151515;
+  padding: 10px 0;
+  height: 10.5vh;
+  /* overflow: auto; */
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}

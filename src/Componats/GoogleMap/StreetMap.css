@@ -1,0 +1,41 @@
+.map-container {
+    height: 60vh;
+    /* Full height */
+    width: 100%;
+    /* background-color: rgb(247, 34, 34); */
+    /* Full width */
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(247, 34, 34); */
+
+}
+
+.custom-marker {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.custom-marker.green {
+    background-color: green;
+}
+
+.custom-marker.yellow {
+    background-color: yellow;
+}
+
+.custom-marker.red {
+    background-color: red;
+}
+
+.custom-marker.gray {
+    background-color: gray;
+}
+
+.custom-marker.gray-red-dot {
+    background-color: gray;
+    border: 3px solid red;
+}
