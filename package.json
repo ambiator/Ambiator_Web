@@ -2,7 +2,7 @@
   "name": "ambiator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://13.127.40.80/Ambiator/",
+  "homepage": "/Ambiator",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

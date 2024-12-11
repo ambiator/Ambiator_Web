@@ -10,7 +10,7 @@ const _fetchService = (PATH, serviceMethod, data, successCallback, errorCallBack
   // const END_POINT = ' http://192.168.1.147:8004/api/';
   // const END_POINT = ' http://192.168.1.87:8005/api/';
 
-  const END_POINT = 'http://13.127.40.80:8000/api/';
+  const END_POINT = `${process.env.REACT_APP_API_URL}/api/`;
 
   const { email, emailId, userRole, afiliateCode, id } = userDetails;
 
@@ -73,7 +73,7 @@ const _fetchService = (PATH, serviceMethod, data, successCallback, errorCallBack
 
 export const LoginService = (data) => {
   const PATH = 'loginWeb';
-  const END_POINT = 'http://13.127.40.80:8000/api/';
+  const END_POINT = `${process.env.REACT_APP_API_URL}/api/`;
 
   const SERVICE_METHOD = 'POST';
   const headers = {
