@@ -1371,7 +1371,7 @@ const ViewManage = ({ isId, deviceStatu, selectedData }) => {
                             >
                                 <CardContent >
 
-                                    {/* <Grid container spacing={2} style={{ marginTop: '0px', marginLeft: '1px' }}>
+                                    <Grid container spacing={2} style={{ marginTop: '0px', marginLeft: '1px' }}>
 
                                         <Grid xs={3.5} md={4.9} style={{ display: 'flex', alignItems: 'center', justifyContent: "flex-star", marginTop: '2px', marginLeft: '5px' }}>
                                             <Typography
@@ -1471,7 +1471,7 @@ const ViewManage = ({ isId, deviceStatu, selectedData }) => {
                                                 CO2 Equivalent
                                             </Typography>
                                         </Grid>
-                                    </Grid> */}
+                                    </Grid>
                                     <Grid container spacing={2} style={{ marginTop: '0px', marginLeft: '1px' }}>
 
                                         {deviceStatics.map((stat, index) => (

@@ -7,7 +7,7 @@ import UnitLevelWeaher from './DrillDown/UnitLevelWeaher';
 import ViewManage from './DrillDown/ViewManage';
 import ChallengeHistory from './DrillDown/ChallengeHistory';
 import ViewHistory from './DrillDown/ViewHistory';
-import logo from '../../Images/rdllogo.png';
+// import logo from '../../Images/rdllogo.png';
 import AlertView from './DrillDown/AlertView';
 import AccessTable from './DrillDown/AccessTable';
 import ApplicationStore from '../Utility/localStorageUtil';

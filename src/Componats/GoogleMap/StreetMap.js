@@ -179,6 +179,183 @@
 
 ///////Another map///////code
 
+// import React, { useState, useEffect } from 'react';
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+// import L from 'leaflet';
+// import 'leaflet/dist/leaflet.css';
+// import './StreetMap.css';
+// import red from './images/Location.png';
+// import gray from './images/Gray.png';
+// import grayRedDot from './images/GrayRdot.png';
+// import yellow from './images/yell.png';
+// import green from './images/green.png'
+// import { AlertMapPinData } from '../ApiService/LoginPageService';
+// import { useNavigate } from 'react-router-dom';
+
+// // Define custom marker icons
+// const greenIcon = new L.Icon({
+//     iconUrl: green,
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25],
+//     popupAnchor: [0, -25],
+// });
+
+// const yellowIcon = new L.Icon({
+//     iconUrl: yellow,
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25],
+//     popupAnchor: [0, -25],
+// });
+
+// const redIcon = new L.Icon({
+//     iconUrl: red,
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25],
+//     popupAnchor: [0, -25],
+// });
+
+// const grayIcon = new L.Icon({
+//     iconUrl: gray,
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25],
+//     popupAnchor: [0, -25],
+// });
+
+// const grayRedDotIcon = new L.Icon({
+//     iconUrl: grayRedDot,
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25],
+//     popupAnchor: [0, -25],
+// });
+
+// const StreetMap = ({ filterId, setIsDashboard, setSelectedData }) => {
+//     console.log('1234567890////', filterId)
+//     const navigate = useNavigate();
+
+//     const [mapData, setmapData] = useState([]);
+
+//     // const mapData = [
+//     //     {
+//     //         "id": 1267,
+//     //         "deviceId": "RDL010",
+//     //         "deviceType": "AMBIATOR 5TR",
+//     //         "customer": "Keerthi",
+//     //         "phoneNo": "9535702264",
+//     //         "location": "\"\"",
+//     //         "status": "All Ok"
+//     //     },
+//     //     {
+//     //         "id": 1056,
+//     //         "deviceId": "RDL001",
+//     //         "deviceType": "AMBIATOR 5TR",
+//     //         "customer": "Keerthi",
+//     //         "phoneNo": "9535702264",
+//     //         "location": "\"\"",
+//     //         "status": "Filter Missing"
+//     //     },
+//     //     {
+//     //         "id": 902,
+//     //         "deviceId": "RDL002",
+//     //         "deviceType": "AMBIATOR 5TR",
+//     //         "customer": "Keerthi",
+//     //         "phoneNo": "9535702264",
+//     //         "location": "{\"latitude\": 17.385044, \"longitude\": 78.486671}",
+//     //         "status": "Unit is OFF"
+//     //     }
+//     // ];
+
+//     useEffect(() => {
+//         AlertMapPinData({
+//             type: filterId == 'All' ? "" : filterId
+
+//         }, handleMapSuccess, handleMapException);
+
+
+
+//     }, [filterId]);
+//     const handleMapSuccess = (dataObject) => {
+//         setmapData(dataObject.data)
+
+//     };
+//     const handleMapException = () => {
+
+//     };
+//     const handleCustomerClick = (location) => {
+//         console.log("event====>", location)
+//         setIsDashboard(1);
+//         setSelectedData(location);
+//         // alert("dfff")
+//         // navigate('DrillDownUnitLevel')
+//     };
+
+//     return (
+//         <div className="map-container">
+//             <MapContainer center={[20.5937, 78.9629]} zoom={4.5} scrollWheelZoom={false}>
+//                 <TileLayer
+//                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+//                 />
+//                 {mapData && mapData.length > 0 && mapData.map((location, index) => {
+//                     let icon;
+//                     switch (location.status) {
+//                         case 'All Ok':
+//                             icon = greenIcon;
+//                             break;
+//                         case 'Filter Missing':
+//                             icon = yellowIcon;
+//                             break;
+//                         case 'No Water Supply':
+//                             icon = redIcon;
+//                             break;
+//                         case 'Communication Down':
+//                             icon = grayIcon;
+//                             break;
+//                         case 'Unit is OFF':
+//                             icon = grayRedDotIcon;
+//                             break;
+//                         // default:
+//                         //     icon = greenIcon;
+//                         //     statusMessage = 'Unknown Status';
+//                     }
+//                     let coordinates = null;
+//                     console.log('mckkvv>>', coordinates)
+//                     // Check if location.location is valid and not an empty string
+//                     if (location.location && location.location !== "\"\"") {
+//                         try {
+//                             coordinates = JSON.parse(location.location);
+//                         } catch (error) {
+//                             console.error("Failed to parse location:", error);
+//                         }
+//                     }
+
+//                     if (coordinates && coordinates.latitude && coordinates.longitude) {
+//                         const position = [coordinates.latitude, coordinates.longitude];
+//                         console.log('mckkvv>>', coordinates)
+
+//                         return (
+//                             <Marker key={index} position={position} icon={icon}>
+//                                 <Popup>
+//                                     <div>
+//                                         <strong><a style={{ cursor: 'pointer' }} onClick={(e) => handleCustomerClick(location)}>{location.customer}</a></strong><br />
+//                                         Contact Number: {location.phoneNo}<br />
+//                                         Unit serial No: {location.deviceId}<br />
+//                                         Status: {location.status}
+//                                     </div>
+//                                 </Popup>
+//                             </Marker>
+//                         );
+//                     } else {
+//                         return null;
+//                     }
+//                 })}
+//             </MapContainer>
+//         </div>
+//     );
+// };
+
+// export default StreetMap;
+
+
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -188,104 +365,51 @@ import red from './images/Location.png';
 import gray from './images/Gray.png';
 import grayRedDot from './images/GrayRdot.png';
 import yellow from './images/yell.png';
-import green from './images/green.png'
+import green from './images/green.png';
 import { AlertMapPinData } from '../ApiService/LoginPageService';
 import { useNavigate } from 'react-router-dom';
 
 // Define custom marker icons
-const greenIcon = new L.Icon({
-    iconUrl: green,
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25],
-});
+const createIcon = (iconUrl) => {
+    return new L.Icon({
+        iconUrl,
+        iconSize: [25, 25],
+        iconAnchor: [12, 25],
+        popupAnchor: [0, -25],
+    });
+};
 
-const yellowIcon = new L.Icon({
-    iconUrl: yellow,
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25],
-});
-
-const redIcon = new L.Icon({
-    iconUrl: red,
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25],
-});
-
-const grayIcon = new L.Icon({
-    iconUrl: gray,
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25],
-});
-
-const grayRedDotIcon = new L.Icon({
-    iconUrl: grayRedDot,
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25],
-});
+const greenIcon = createIcon(green);
+const yellowIcon = createIcon(yellow);
+const redIcon = createIcon(red);
+const grayIcon = createIcon(gray);
+const grayRedDotIcon = createIcon(grayRedDot);
 
 const StreetMap = ({ filterId, setIsDashboard, setSelectedData }) => {
-    console.log('1234567890////', filterId)
     const navigate = useNavigate();
-
-    const [mapData, setmapData] = useState([]);
-
-    // const mapData = [
-    //     {
-    //         "id": 1267,
-    //         "deviceId": "RDL010",
-    //         "deviceType": "AMBIATOR 5TR",
-    //         "customer": "Keerthi",
-    //         "phoneNo": "9535702264",
-    //         "location": "\"\"",
-    //         "status": "All Ok"
-    //     },
-    //     {
-    //         "id": 1056,
-    //         "deviceId": "RDL001",
-    //         "deviceType": "AMBIATOR 5TR",
-    //         "customer": "Keerthi",
-    //         "phoneNo": "9535702264",
-    //         "location": "\"\"",
-    //         "status": "Filter Missing"
-    //     },
-    //     {
-    //         "id": 902,
-    //         "deviceId": "RDL002",
-    //         "deviceType": "AMBIATOR 5TR",
-    //         "customer": "Keerthi",
-    //         "phoneNo": "9535702264",
-    //         "location": "{\"latitude\": 17.385044, \"longitude\": 78.486671}",
-    //         "status": "Unit is OFF"
-    //     }
-    // ];
+    const [mapData, setMapData] = useState([]);
 
     useEffect(() => {
-        AlertMapPinData({
-            type: filterId == 'All' ? "" : filterId
-
-        }, handleMapSuccess, handleMapException);
-
-
-
+        AlertMapPinData(
+            {
+                type: filterId === 'All' ? '' : filterId,
+            },
+            handleMapSuccess,
+            handleMapException
+        );
     }, [filterId]);
+
     const handleMapSuccess = (dataObject) => {
-        setmapData(dataObject.data)
-
+        setMapData(dataObject.data);
     };
+
     const handleMapException = () => {
-
+        console.error('Error fetching map data');
     };
+
     const handleCustomerClick = (location) => {
-        console.log("event====>", location)
         setIsDashboard(1);
         setSelectedData(location);
-        // alert("dfff")
-        // navigate('DrillDownUnitLevel')
     };
 
     return (
@@ -295,7 +419,7 @@ const StreetMap = ({ filterId, setIsDashboard, setSelectedData }) => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {mapData && mapData.length > 0 && mapData.map((location, index) => {
+                {mapData.map((location, index) => {
                     let icon;
                     switch (location.status) {
                         case 'All Ok':
@@ -313,40 +437,45 @@ const StreetMap = ({ filterId, setIsDashboard, setSelectedData }) => {
                         case 'Unit is OFF':
                             icon = grayRedDotIcon;
                             break;
-                        // default:
-                        //     icon = greenIcon;
-                        //     statusMessage = 'Unknown Status';
+                        default:
+                            icon = greenIcon; // Default icon
                     }
+
                     let coordinates = null;
-                    console.log('mckkvv>>', coordinates)
-                    // Check if location.location is valid and not an empty string
-                    if (location.location && location.location !== "\"\"") {
+                    if (location.location && location.location !== '""') {
                         try {
                             coordinates = JSON.parse(location.location);
                         } catch (error) {
-                            console.error("Failed to parse location:", error);
+                            console.error('Failed to parse location:', error);
                         }
                     }
 
-                    if (coordinates && coordinates.latitude && coordinates.longitude) {
+                    if (coordinates?.latitude && coordinates?.longitude) {
                         const position = [coordinates.latitude, coordinates.longitude];
-                        console.log('mckkvv>>', coordinates)
-
                         return (
                             <Marker key={index} position={position} icon={icon}>
                                 <Popup>
                                     <div>
-                                        <strong><a style={{ cursor: 'pointer' }} onClick={(e) => handleCustomerClick(location)}>{location.customer}</a></strong><br />
-                                        Contact Number: {location.phoneNo}<br />
-                                        Unit serial No: {location.deviceId}<br />
+                                        <strong>
+                                            <a
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => handleCustomerClick(location)}
+                                            >
+                                                {location.customer}
+                                            </a>
+                                        </strong>
+                                        <br />
+                                        Contact Number: {location.phoneNo}
+                                        <br />
+                                        Unit serial No: {location.deviceId}
+                                        <br />
                                         Status: {location.status}
                                     </div>
                                 </Popup>
                             </Marker>
                         );
-                    } else {
-                        return null;
                     }
+                    return null;
                 })}
             </MapContainer>
         </div>
