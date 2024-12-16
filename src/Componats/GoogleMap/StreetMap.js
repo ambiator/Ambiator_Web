@@ -304,7 +304,7 @@ const StreetMap = ({ filterId, setIsDashboard, setSelectedData }) => {
                         case 'Filter Missing':
                             icon = yellowIcon;
                             break;
-                        case 'No Source Water':
+                        case 'No Water Supply':
                             icon = redIcon;
                             break;
                         case 'Communication Down':
